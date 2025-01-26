@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <title>UI Builder</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="builder">
+      <div class="components-sidebar">
+        <h2>Components</h2>
+        <div class="component-item" draggable="true" data-type="heading">
+          <i class="fas fa-heading"></i> Heading
+        </div>
+        <div class="component-item" draggable="true" data-type="text">
+          <i class="fas fa-paragraph"></i> Text
+        </div>
+        <div class="component-item" draggable="true" data-type="button">
+          <i class="fas fa-square"></i> Button
+        </div>
+        <div class="component-item" draggable="true" data-type="image">
+          <i class="fas fa-image"></i> Image
+        </div>
+      </div>
+      <div class="canvas-container">
+        <div class="toolbar">
+          <button id="previewBtn" class="toolbar-btn">
+            <i class="fas fa-eye"></i> Preview
+          </button>
+          <div class="device-selector">
+            <button class="device-btn active" data-device="desktop">
+              <i class="fas fa-desktop"></i>
+            </button>
+            <button class="device-btn" data-device="tablet">
+              <i class="fas fa-tablet-alt"></i>
+            </button>
+            <button class="device-btn" data-device="mobile">
+              <i class="fas fa-mobile-alt"></i>
+            </button>
+          </div>
+        </div>
+        <div id="canvas" class="canvas">
+          <div class="canvas-placeholder">Drag components here</div>
+        </div>
+      </div>
+      <div class="properties-sidebar">
+        <h2>Properties</h2>
+        <div id="properties-panel" class="properties-panel">
+          <div class="no-selection">No element selected</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="preview-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Preview</h2>
+        <button class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="preview-container"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+
+</body>
+
+</html>
